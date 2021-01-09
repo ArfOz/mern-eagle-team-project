@@ -19,22 +19,16 @@ function Copyright() {
   return (
     <div>
       <Typography variant="body2" color="inherit" align="center">
-        {/* {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."} */}
         English (UK) Türkçe Kurdî (Kurmancî) العربية Zaza Deutsch Русский
         Français (France) فارسی Español Português (Brasil)
       </Typography>
 
       <Typography>
-        Sign UpLog InMessengerFacebook LiteWatchPeoplePagesPage
-        categoriesPlacesGamesLocationsMarketplaceFacebook
-        PayGroupsJobsOculusPortalInstagramLocalFundraisersServicesVoting
-        Information CentreAboutCreate adCreate
-        PageDevelopersCareersPrivacyCookiesAdChoicesTermsHelpSettingsActivity
+        Sign Up Log In Messenger Facebook LiteWatchPeoplePages Page
+        categories Places Games Locations Market place Facebook
+        PayGroups Jobs Oculus Portal Instagram Local Fundraisers Services Voting
+        Information Centre About Createad Create
+        Page Developers Careers Privacy Cookies Ad Choices Terms Help Settings Activity
         log
       </Typography>
     </div>
@@ -69,17 +63,15 @@ const Main = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      // console.log(values)
       postData("/api/auth/login", values)
         .then((data) => {
-          // console.log("You are succesfully logged in!");
-          // console.log("data", data, "values", values);
           localStorage.setItem("token", data.token);
           setLoggedIn(true);
           history.push("/Comments");
         })
         .catch((err) => {
           toast(err?.message || "An error occured");
+          alert("wrong pasword or email")
         });
     },
   });

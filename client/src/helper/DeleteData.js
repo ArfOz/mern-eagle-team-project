@@ -1,10 +1,10 @@
 import axios from "axios";
 
-export const postData = async (path, data) => {
+export const deleteData = async (path, id) => {
   
   const token = localStorage.getItem("token");
   // console.log("token", token);
-  const response = await axios.post(`${path}`, data, {
+  const response = await axios.delete(`${path}`, id, {
     headers: {
       token,
     },
